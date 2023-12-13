@@ -1,0 +1,3 @@
+[submodule "measure-hider"]
+	path = measure-hider
+	url = https://github.com/pnaimoli/measure-hider.git
