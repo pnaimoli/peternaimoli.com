@@ -73,10 +73,10 @@ done
 cp wsgi.py build/
 
 # Add and commit changes to git, check for any changes before committing
-# cd build
-# git add -A .
-# git diff --quiet && git diff --staged --quiet || git commit -m "Update deploy branch"
-# cd ..
+cd build
+git add -A .
+git diff --quiet && git diff --staged --quiet || git commit -m "Update deploy branch"
+cd ..
 
 # Conditional execution based on script arguments
 if [[ " $* " =~ " --gitdeploy " ]]; then
