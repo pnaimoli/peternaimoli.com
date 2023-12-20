@@ -17,11 +17,22 @@ cd measure-hider
 ./build.sh
 cd ..
 
+cd chordmania
+./build.sh
+cd ..
+
+# Clear build directory
 rm -rf build/*
+
+cat measure-hider/build/requirements.txt chordmania/build/requirements.txt > build/requirements.txt
+
+mkdir -p build/measure-hider-build
+cp -rp measure-hider/build/* build/measure-hider-build/
+
+mkdir -p build/chordmania-build
+cp -rp chordmania/build/* build/chordmania-build/
+
 cp -p wsgi.py build/
-cp -p measure-hider/build/requirements.txt build/
-mkdir -p build/measure-hider
-cp -rp measure-hider/build build/measure-hider/
 
 cd build
 git add -A .

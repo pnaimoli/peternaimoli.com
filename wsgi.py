@@ -4,9 +4,8 @@ from werkzeug.serving import run_simple
 
 # Needs to be done because there's a hyphen in measure-hider
 import importlib
-measure_hider_modeler = importlib.import_module("measure-hider.build.measure_hider_modeler")
-measure_app = measure_hider_modeler.app
-from chordmania.build.xmlserver import app as chord_app
+measure_hider = importlib.import_module("measure-hider-build.measure_hider_modeler")
+chordmania = importlib.import_module("chordmania-build.xmlserver")
 
 # Define a default app
 default_app = Flask(__name__)
@@ -26,8 +25,8 @@ def homepage():
     '''
 
 application = DispatcherMiddleware(default_app, {
-    '/measure-hider': measure_app,
-    '/chordmania': chord_app,
+    '/measure-hider': measure_hider.app,
+    '/chordmania': chordmania.app,
 })
 
 if __name__ == '__main__':
