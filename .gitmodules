@@ -1,3 +1,6 @@
 [submodule "measure-hider"]
 	path = measure-hider
 	url = https://github.com/pnaimoli/measure-hider.git
+[submodule "chordmania"]
+	path = chordmania
+	url = https://github.com/pnaimoli/chordmania.git

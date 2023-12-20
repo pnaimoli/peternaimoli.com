@@ -6,7 +6,7 @@ from werkzeug.serving import run_simple
 import importlib
 measure_hider_modeler = importlib.import_module("measure-hider.build.measure_hider_modeler")
 measure_app = measure_hider_modeler.app
-#from chordmania import app as chord_app
+from chordmania.build.xmlserver import app as chord_app
 
 # Define a default app
 default_app = Flask(__name__)
@@ -27,7 +27,7 @@ def homepage():
 
 application = DispatcherMiddleware(default_app, {
     '/measure-hider': measure_app,
-#    '/chordmania': chord_app,
+    '/chordmania': chord_app,
 })
 
 if __name__ == '__main__':
